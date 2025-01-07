@@ -71,8 +71,8 @@ The below Azure services are used for this project:
   - Function App Name: serverless-funcapp-demo
   - Follow the configuration setting as instructed in the demo
   - Add below environment variables
-    - DB_SERVER_NAME:<YourDBServerName> 
-    - DB_NAME: <YourDBName>
+    - DB_SERVER_NAME: [YourDBServerName] 
+    - DB_NAME: [YourDBName]
 ### 2.3
 - Grant SQL DB Access to Managed Identity
   - Connect to your SQL DB
