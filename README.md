@@ -107,7 +107,7 @@ The below Azure services are used for this project:
     
 ## Contact
 - Name: Arockiadoss Jesudoss
-- GitHub: @ynoelaanzi
+- GitHub: https://github.com/noelaanzi
 - Linkedin: www.linkedin.com/in/arockiadoss-4756a4145
 - YouTube: https://www.youtube.com/@IT-SkilL-MasteR
 - Facebook: https://www.facebook.com/Arockiadoss.sna/
