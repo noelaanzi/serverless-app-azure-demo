@@ -1,22 +1,18 @@
 const { app } = require('@azure/functions');
-const { DefaultAzureCredential } = require("@azure/identity");
 const sql = require("mssql");
 
 async function processRequest(request, context) {
 
     const config = {
+        user: process.env.USER_NAME,
+        password: process.env.DB_PASSWORD,
         server: process.env.DB_SERVER_NAME, // Azure SQL Database Server name
         database: process.env.DB_NAME, // Azure SQL Database name
+
         options: {
-            encrypt: true, // Required for Azure SQL Database
-            trustServerCertificate: false,
-        },
-        authentication: {
-            type: "azure-active-directory-msi-vm", // Use one of the Managed Identity authentication type
-            options: {
-                credential: new DefaultAzureCredential(),
-            },
-        },
+            encrypt: true, // Use encryption
+            trustServerCertificate: true // Change to false if you want to validate the server certificate
+        }
     };
 
     try {
