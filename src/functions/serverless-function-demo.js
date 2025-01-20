@@ -3,15 +3,16 @@ const sql = require("mssql");
 
 async function processRequest(request, context) {
 
+    // Database connection parameters
     const config = {
         user: process.env.USER_NAME,
         password: process.env.DB_PASSWORD,
-        server: process.env.DB_SERVER_NAME, // Azure SQL Database Server name
-        database: process.env.DB_NAME, // Azure SQL Database name
+        server: process.env.DB_SERVER_NAME,
+        database: process.env.DB_NAME,
 
         options: {
-            encrypt: true, // Use encryption
-            trustServerCertificate: true // Change to false if you want to validate the server certificate
+            encrypt: true,
+            trustServerCertificate: true
         }
     };
 
