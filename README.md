@@ -31,10 +31,8 @@ The below Azure services are used for this project:
     - In VS Code install the below
       - Install Azure Functions extension
       - Install Azure Functions Core Tools
-#### 1.2  
-- Git Installation
-  - Dwonload Link: https://git-scm.com/downloads
-#### 1.3
+
+#### 1.2
 - Clone the repository to local
   - Function App: git clone https://github.com/noelaanzi/serverless-app-azure-demo.git
   - React App: git clone https://github.com/noelaanzi/serverless-app-react-azure.git
