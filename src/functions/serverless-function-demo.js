@@ -9,7 +9,6 @@ async function processRequest(request, context) {
         password: process.env.DB_PASSWORD,
         server: process.env.DB_SERVER_NAME,
         database: process.env.DB_NAME,
-
         options: {
             encrypt: true,
             trustServerCertificate: true
