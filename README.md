@@ -21,27 +21,31 @@ The below Azure services are used for this project:
 - Microsoft Enta ID – User
   - Privileges for creating and managing Azure Function App, Azure SQL Database
 ### 1.1
-- Visual Studio Code Installation on Local computer
-  - https://code.visualstudio.com/download
-  - Install Azure Functions extension in VS code
-  - Install Azure Functions Core Tools in VS code
+- Installation on Local Machine
+  - Git
+    - Dwonload Link: https://git-scm.com/downloads
+  - Node.js
+    - Download URL: https://nodejs.org/en
+  - Visual Studio Code
+    - Download URL: https://code.visualstudio.com/
+    - In VS Code install the below
+      - Install Azure Functions extension
+      - Install Azure Functions Core Tools
 #### 1.2  
 - Git Installation
   - Dwonload Link: https://git-scm.com/downloads
 #### 1.3
-- Postman Installation
-  - Dwonload Link: https://www.postman.com/downloads/
-#### 1.4
 - Clone the repository to local
-  - git clone https://github.com/noelaanzi/serverless-app-azure-demo.git
+  - Function App: git clone https://github.com/noelaanzi/serverless-app-azure-demo.git
+  - React App: git clone https://github.com/noelaanzi/serverless-app-react-azure.git
 
 ### Steps
 ### 2.0
 - Azure SQL Database
   - Create Azure SQL Database from Azure portal
-    - Database Name: <YourDBServerName>   
-    - Database Server Name: <YourDBName>
-    - For creating Azure SQL Database please watch the video from below link:
+    - Database Name: [DB ServerName] -> Required for Azure Functions Environment variable   
+    - Database Server Name: [DB Name] -> Required for Azure Functions Environment variable   
+    - For detailed Lessons about Azure SQL Database please watch the video from below link:
       - https://youtu.be/dDis6wenl-k
  #### 2.1 
     - Create table & insert data
@@ -79,16 +83,17 @@ The below Azure services are used for this project:
     - DB_PASSWORD: [SQL DB Password]
     - DB_SERVER_NAME: [DB ServerName]  
     - DB_NAME: [DB Name]
-    - 
+     
 ### 2.3
 - Deploy Azure function to Azure Function App
 - Open the project in VS code which you cloned in ( ### Prerequisites, #### 1.4)
 - Deploy the function to Azure Function App created in ( ### Steps, ### 2.2 )
-- For creating & deploying Azure Function App please watch the video from below link:
+- For detailed lessons about creating & deploying Azure Function App please watch the video from below link:
   - https://youtu.be/kVO6KkDwKRg
+  
 ### 2.4
 - Create API in API Management
-- For creating & deploying Azure API Management API please watch the video from below link:
+- For detailed lessons about creating & deploying Azure API Management API please watch the video from below link:
   - https://youtu.be/XkPXJTbsg2A
  
 ### 2.5
