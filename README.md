@@ -75,8 +75,11 @@ The below Azure services are used for this project:
   - Function App Name: serverless-funcapp-demo
   - Follow the configuration setting as instructed in the demo
   - Add below environment variables
-    - DB_SERVER_NAME: [YourDBServerName] 
-    - DB_NAME: [YourDBName]
+    - USER_NAME: [SQL DB Username]
+    - DB_PASSWORD: [SQL DB Password]
+    - DB_SERVER_NAME: [DB ServerName]  
+    - DB_NAME: [DB Name]
+    - 
 ### 2.3
 - Deploy Azure function to Azure Function App
 - Open the project in VS code which you cloned in ( ### Prerequisites, #### 1.4)
@@ -103,9 +106,9 @@ The below Azure services are used for this project:
     - npm install -g serve
   - 2.5.3. Run the command for serving production build
     - serve -s build
- - The above command will produce the below output
- - Copy and enter the local URL [http://localhost:3000] in the browser, which will open the React App
- - input the data in the app and test it.
+  - The above command will produce the below output
+  - Copy and enter the local URL [http://localhost:3000] in the browser, which will open the React App
+  - input the data in the app and test it.
 
             ┌─────────────────────────────────────────┐
             │                                         │
