@@ -96,13 +96,13 @@ The below Azure services are used for this project:
   - Open Terminal in VS Cpde
   - The [node_modules] folder may be missing which is usually excluded while uploading to GitHub repository
   - 2.5.1. Run below command to install Node modules
-    npm install
+    - npm install
   - 2.5.2. Run the build command to build the app
-    npm run build
+    - npm run build
   - 2.5.2. Run the commands to serve the files using a local HTTP server
-    npm install -g serve
+    - npm install -g serve
   - 2.5.3. Run the command for serving production build
-    serve -s build
+    - serve -s build
  - The above command will produce the below output
  - Copy and enter the local URL [http://localhost:3000] in the browser, which will open the React App
  - input the data in the app and test it.
