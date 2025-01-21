@@ -45,15 +45,15 @@ The below Azure services are used for this project:
       - https://youtu.be/dDis6wenl-k
  #### 2.1 
     - Create table & insert data
-           CREATE TABLE Customers
+           CREATE TABLE Customer
           (
             CustomerId INT IDENTITY  PRIMARY KEY,
             FirstName NVARCHAR(100) NOT NULL,
             LastName NVARCHAR(100) NOT NULL,
             Email NVARCHAR(100) NOT NULL
           );
-       - You can add more data using the below script just changing the values
-          INSERT INTO [Customers]
+    - You can add more data using the below script just changing the values
+          INSERT INTO [Customer]
           (
             [FirstName]
           , [LastName]
@@ -65,6 +65,10 @@ The below Azure services are used for this project:
            ,'YourLastName'
            ,'asuresqldb123dummy@gmail.com'
          );
+    - Query the data
+         SELECT * FROM Customer;
+         SELECT * FROM Customer WHERE CustomerId = <value>;
+         
 ### 2.2
 - Azure Function APP
 - Create Azure Function App from Azure portal
@@ -74,41 +78,49 @@ The below Azure services are used for this project:
     - DB_SERVER_NAME: [YourDBServerName] 
     - DB_NAME: [YourDBName]
 ### 2.3
-- Grant SQL DB Access to Managed Identity
-  - Connect to your SQL DB
-  - Run below SQL commands
-    - Replace  [YourFunctionAppName] with the name of your Function App
-
-      - CREATE USER [YourFunctionAppName] FROM EXTERNAL PROVIDER;
-      - ALTER ROLE db_datareader ADD MEMBER [YourFunctionAppName];
-      - ALTER ROLE db_datawriter ADD MEMBER [YourFunctionAppName];
-        
-### 2.4
 - Deploy Azure function to Azure Function App
 - Open the project in VS code which you cloned in ( ### Prerequisites, #### 1.4)
 - Deploy the function to Azure Function App created in ( ### Steps, ### 2.2 )
 - For creating & deploying Azure Function App please watch the video from below link:
   - https://youtu.be/kVO6KkDwKRg
-### 2.5
+### 2.4
 - Create API in API Management
 - For creating & deploying Azure API Management API please watch the video from below link:
   - https://youtu.be/XkPXJTbsg2A
  
-### 2.6
-- Test Azure API Management API in Postman
-  - For [POST] method to insert data to DB, pass JSON data in below format:
-       {
-       "FirstName":"YourFirstName",
-       "LastName":"YourLastName",
-       "Email":"s123dummy@gmail.com"
-      }
-  - For [GET] method to retrieve data from DB        
-    - Input -> pass query parameter id=<value> e.g. id=1 
+### 2.5
+- React App
+  - Query and insert customer information through HTTP requests
+  - Steps to run React App locally from VS Code
+  - Afther repository is cloned locally as menntioned in [#### 1.3- Clone the repository to local]
+   Open the folder in VS code
+   Open Terminal
+   The [node_modules] folder may be missing which is usually excluded while uploading to GitHub repository
+   2.5.1. Run below command to install Node modules
+          npm install
+   2.5.2. Run the build command to build the app
+          npm run build
+2.3.2. Run the commands to serve the files using a local HTTP server
+npm install -g serve
+2.3.3. Run the command for serving production build
+serve -s build
+
+The above command will produce the below output copy and enter the local URL [http://localhost:3000] in the browser, which will open the React App
+
+            ┌─────────────────────────────────────────┐
+            │                                         │
+            │   Serving!                              │
+            │                                         │
+            │   - Local:    http://localhost:3000     │
+            │   - Network:  http://192.168.3.2:3000   │
+            │                                         │
+            │   Copied local address to clipboard!    │
+            │                                         │
+            └─────────────────────────────────────────┘
     
 ## Contact
 - Name: Arockiadoss Jesudoss
-- GitHub: https://github.com/noelaanzi
-- Linkedin: www.linkedin.com/in/arockiadoss-4756a4145
 - YouTube: https://www.youtube.com/@IT-SkilL-MasteR
-- Facebook: https://www.facebook.com/Arockiadoss.sna/
+- Linkedin: www.linkedin.com/in/arockiadoss-4756a4145
+- GitHub: https://github.com/noelaanzi
 - Instagram : https://www.instagram.com/arockiadoss_sna/?hl=en
