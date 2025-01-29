@@ -47,7 +47,7 @@ The below Azure services are used for this project:
       - https://youtu.be/dDis6wenl-k
  #### 2.1 
     - Create table & insert data
-           CREATE TABLE Customer
+           CREATE TABLE Customers
           (
             CustomerId INT IDENTITY  PRIMARY KEY,
             FirstName NVARCHAR(100) NOT NULL,
@@ -55,7 +55,7 @@ The below Azure services are used for this project:
             Email NVARCHAR(100) NOT NULL
           );
     - You can add more data using the below script just changing the values
-          INSERT INTO [Customer]
+          INSERT INTO [Customers]
           (
             [FirstName]
           , [LastName]
@@ -68,8 +68,8 @@ The below Azure services are used for this project:
            ,'asuresqldb123dummy@gmail.com'
          );
     - Query the data
-         SELECT * FROM Customer;
-         SELECT * FROM Customer WHERE CustomerId = <value>;
+         SELECT * FROM Customers;
+         SELECT * FROM Customers WHERE CustomerId = <value>;
          
 ### 2.2
 - Azure Function APP
