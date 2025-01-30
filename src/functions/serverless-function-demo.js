@@ -15,6 +15,11 @@ async function processRequest(request, context) {
         }
     };
 
+    headerData = {
+        "Content-Type": "application/json" // Send response as JSON content type
+    }
+
+
     try {
 
         // Connect to Azure SQL
@@ -33,9 +38,7 @@ async function processRequest(request, context) {
                 return {
                     status: 400,
                     jsonBody: responseData,
-                    headers: {
-                        "Content-Type": "application/json" // Send response as JSON content type
-                    }
+                    headers: headerData
                 };
             }
 
@@ -52,36 +55,31 @@ async function processRequest(request, context) {
             return {
                 status: 200,
                 jsonBody: responseData,
-                headers: {
-                    "Content-Type": "application/json" // Send response as JSON content type
-                }
+                headers: headerData
             };
         } else if (request.method === "POST") {
 
             // Assign request payload
             const customer = await request.json();
-            const { FirstName, LastName, Email } = customer;
+            const { Name, Email } = customer;
 
-            if (!FirstName || !LastName || !Email) {
+            if (!Name || !Email) {
                 const responseData = {
-                    message: "Please send FirstName,LastName,Email in JSON data"
+                    message: "Please send Name,Email in JSON data"
 
                 };
                 return {
                     status: 400,
                     jsonBody: responseData,
-                    headers: {
-                        "Content-Type": "application/json" // Send response as JSON content type
-                    }
+                    headers: headerData
                 };
             }
 
             // Execute INSERT query
             await sqlConnection.request()
-                .input("firstName", sql.NVarChar, FirstName)
-                .input("lastName", sql.NVarChar, LastName)
+                .input("name", sql.NVarChar, Name)
                 .input("email", sql.NVarChar, Email)
-                .query("INSERT INTO Customers (FirstName,LastName, Email) VALUES (@firstName,@lastName, @email);");
+                .query("INSERT INTO Customers (Name,Email) VALUES (@name, @email);");
 
             const responseData = {
                 message: "1 Row Successfully Inserted"
@@ -91,9 +89,7 @@ async function processRequest(request, context) {
             return {
                 status: 200,
                 jsonBody: responseData,
-                headers: {
-                    "Content-Type": "application/json" // Send response as JSON content type
-                }
+                headers: headerData
             };
 
         }
@@ -107,9 +103,7 @@ async function processRequest(request, context) {
         return {
             status: 500,
             jsonBody: responseData,
-            headers: {
-                "Content-Type": "application/json" // Send response as JSON content type
-            }
+            headers: headerData
         };
 
     } finally {
