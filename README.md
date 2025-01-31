@@ -47,26 +47,23 @@ The below Azure services are used for this project:
       - https://youtu.be/dDis6wenl-k
  #### 2.1 
     - Create table & insert data
-           CREATE TABLE Customers
-          (
-            CustomerId INT IDENTITY  PRIMARY KEY,
-            FirstName NVARCHAR(100) NOT NULL,
-            LastName NVARCHAR(100) NOT NULL,
-            Email NVARCHAR(100) NOT NULL
-          );
+      CREATE TABLE Customers
+      (
+        CustomerId INT IDENTITY  PRIMARY KEY,
+        Name NVARCHAR(100) NOT NULL,
+        Email NVARCHAR(100) NOT NULL
+      );
     - You can add more data using the below script just changing the values
-          INSERT INTO [Customers]
-          (
-            [FirstName]
-          , [LastName]
-          , [Email]
-          )
-          VALUES
-          (
-           'YourFirstName'
-           ,'YourLastName'
-           ,'asuresqldb123dummy@gmail.com'
-         );
+      INSERT INTO [Customers]
+      (
+        [Name]
+      , [Email]
+      )
+      VALUES
+      (
+       'Suzuki'
+       ,'asuresqldb123dummy@gmail.com'
+     );
     - Query the data
          SELECT * FROM Customers;
          SELECT * FROM Customers WHERE CustomerId = <value>;
