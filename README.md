@@ -54,16 +54,16 @@ The below Azure services are used for this project:
         Email NVARCHAR(100) NOT NULL
       );
     - You can add more data using the below script just changing the values
-      INSERT INTO [Customers]
-      (
+       INSERT INTO [Customers]
+       (
         [Name]
-      , [Email]
-      )
-      VALUES
-      (
-       'Suzuki'
-       ,'asuresqldb123dummy@gmail.com'
-     );
+       , [Email]
+       )
+       VALUES
+       (
+        'Suzuki'
+        ,'asuresqldb123dummy@gmail.com'
+       );
     - Query the data
          SELECT * FROM Customers;
          SELECT * FROM Customers WHERE CustomerId = <value>;
